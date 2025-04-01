@@ -3,35 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ಸಂಗಮ (Sangama) - Where Cultures Converge</title>
+  <title>भारतीय संस्कृति (Bharatiya Sanskriti) - Celebrating India's Cultural Diversity</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --text-primary-light: #2c3e50;
-      --text-secondary-light: #7f8c8d;
+      --text-secondary-light: #555555;
       --bg-primary-light: #f9f7f0;
-      --bg-secondary-light: #f0e6cc;
-      --accent-light: #e74c3c;
-      --accent-secondary-light: #c0392b;
+      --bg-secondary-light: #f5f0e4;
+      --accent-light: #FF6D24; /* Saffron orange */
+      --accent-secondary-light: #E63728; /* Deeper red */
       --border-light: #d5dbdb;
+      --gold-light: #d4af37;
       
-      --text-primary-dark: #ecf0f1;
-      --text-secondary-dark: #bdc3c7;
+      --text-primary-dark: #f8f9fa;
+      --text-secondary-dark: #adb5bd;
       --bg-primary-dark: #1a1a2e;
       --bg-secondary-dark: #16213e;
-      --accent-dark: #f39c12;
-      --accent-secondary-dark: #e67e22;
-      --border-dark: #34495e;
+      --accent-dark: #FF9933; /* Indian flag saffron */
+      --accent-secondary-dark: #ff7b00;
+      --border-dark: #495057;
+      --gold-dark: #ffd700;
 
-      --color1: #e74c3c;
-      --color2: #f39c12;
-      --color3: #2ecc71;
-      --color4: #3498db;
-      --color5: #9b59b6;
+      --color1: #FF9933; /* Saffron - Indian flag */
+      --color2: #FFFFFF; /* White - Indian flag */
+      --color3: #138808; /* Green - Indian flag */
+      --color4: #8D3DAF; /* Purple - for royalty */
+      --color5: #E91E63; /* Pink - for festivals */
+      --color6: #d4af37; /* Gold - for traditions */
     }
     
     body {
-      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', 'Hind Siliguri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       background-color: var(--bg-primary-light);
@@ -51,11 +55,11 @@
       padding: 0 20px;
     }
     
-    /* Vibrant Header */
+    /* Vibrant Indian Header */
     header {
       background-image: 
-        linear-gradient(135deg, rgba(231, 76, 60, 0.8), rgba(243, 156, 18, 0.8)),
-        url('/api/placeholder/1200/400');
+        linear-gradient(135deg, rgba(255, 153, 51, 0.8), rgba(230, 55, 40, 0.8)),
+        url('https://images.unsplash.com/photo-1524492412937-b33874b7bdd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
       background-size: cover;
       background-position: center;
       color: white;
@@ -71,6 +75,7 @@
       font-weight: 800;
       text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
       animation: fadeInDown 1s ease;
+      color: var(--gold-light);
     }
     
     .tagline {
@@ -93,7 +98,7 @@
       font-weight: bold;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+      box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
       animation: pulse 2s infinite;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -101,42 +106,72 @@
     
     .dark-mode .header-cta {
       background-color: var(--accent-dark);
-      box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+      box-shadow: 0 5px 15px rgba(255, 158, 0, 0.4);
     }
     
     .header-cta:hover {
       background-color: var(--accent-secondary-light);
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
+      box-shadow: 0 8px 20px rgba(230, 57, 70, 0.6);
       animation: none;
     }
     
     .dark-mode .header-cta:hover {
       background-color: var(--accent-secondary-dark);
-      box-shadow: 0 8px 20px rgba(243, 156, 18, 0.6);
+      box-shadow: 0 8px 20px rgba(255, 158, 0, 0.6);
     }
     
-    .theme-toggle {
+    /* iPhone-style Toggle */
+    .theme-toggle-container {
       position: absolute;
       top: 20px;
       right: 20px;
-      background: rgba(255,255,255,0.2);
-      border: none;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 50px;
-      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-weight: bold;
-      transition: all 0.3s ease;
+      gap: 10px;
+      background: rgba(255,255,255,0.2);
+      padding: 8px 15px;
+      border-radius: 50px;
       backdrop-filter: blur(5px);
     }
     
-    .theme-toggle:hover {
+    .theme-toggle-label {
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    
+    .theme-toggle {
+      position: relative;
+      width: 50px;
+      height: 26px;
+      appearance: none;
       background: rgba(255,255,255,0.3);
-      transform: scale(1.05);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+    
+    .theme-toggle:checked {
+      background: rgba(0,0,0,0.3);
+    }
+    
+    .theme-toggle::before {
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      background: white;
+      transition: all 0.3s ease;
+      transform: translateX(0);
+    }
+    
+    .theme-toggle:checked::before {
+      transform: translateX(24px);
     }
     
     /* Animated Navigation */
@@ -275,7 +310,7 @@
       transform: translateX(-50%);
       width: 80px;
       height: 5px;
-      background: linear-gradient(90deg, var(--color1), var(--color2));
+      background: linear-gradient(90deg, var(--color1), var(--color3));
       border-radius: 5px;
     }
     
@@ -413,8 +448,8 @@
     .cta-section {
       text-align: center;
       background-image: 
-        linear-gradient(135deg, rgba(46, 204, 113, 0.8), rgba(52, 152, 219, 0.8)),
-        url('/api/placeholder/1200/400');
+        linear-gradient(135deg, rgba(19, 136, 8, 0.8), rgba(45, 97, 136, 0.8)),
+        url('https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
       background-size: cover;
       background-position: center;
       padding: 120px 20px;
@@ -504,15 +539,15 @@
     }
     
     .side-feature:nth-child(6) {
-      border-bottom-color: var(--color1);
+      border-bottom-color: var(--color6);
     }
     
     .side-feature:nth-child(7) {
-      border-bottom-color: var(--color2);
+      border-bottom-color: var(--color1);
     }
     
     .side-feature:nth-child(8) {
-      border-bottom-color: var(--color3);
+      border-bottom-color: var(--color2);
     }
     
     .dark-mode .side-feature {
@@ -791,6 +826,14 @@
       footer {
         clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
       }
+      
+      .theme-toggle-container {
+        padding: 6px 12px;
+      }
+      
+      .theme-toggle-label {
+        display: none;
+      }
     }
     
     @media (max-width: 576px) {
@@ -836,28 +879,28 @@
 </head>
 <body>
   <header>
-    <button class="theme-toggle" onclick="toggleTheme()">
-      <span class="light-icon">🌙</span>
-      <span class="dark-icon" style="display:none">☀️</span>
-    </button>
+    <div class="theme-toggle-container">
+      <span class="theme-toggle-label">Dark Mode</span>
+      <input type="checkbox" class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+    </div>
     <div class="container">
-      <div class="logo">ಸಂಗಮ</div>
-      <div class="tagline">Where Cultures Converge, Traditions Flourish</div>
-      <button class="header-cta">Experience Karnataka's Heritage</button>
+      <div class="logo">भारतीय संस्कृति</div>
+      <div class="tagline">Where Traditions Thrive, Cultures Coexist, and Unity Celebrates Diversity</div>
+      <button class="header-cta">Discover India's Living Heritage</button>
     </div>
   </header>
   
   <nav>
     <div class="container nav-container">
-      <div class="nav-logo">ಸಂಗಮ</div>
+      <div class="nav-logo">भारतीय संस्कृति</div>
       <button class="hamburger" onclick="toggleMenu()">☰</button>
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#features">Features</a>
-        <a href="#destinations">Destinations</a>
+        <a href="#regions">Regions</a>
         <a href="#cuisine">Cuisine</a>
-        <a href="#culture">Culture</a>
-        <a href="#about">About</a>
+        <a href="#arts">Arts</a>
+        <a href="#festivals">Festivals</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -866,35 +909,42 @@
   <section class="section" id="home">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Rediscover Karnataka's Cultural Heritage</h2>
-        <p class="section-description">Beyond surface-level tourism, Sangama connects you with authentic cultural experiences, rich historical context, and sustainable practices that benefit both travelers and local communities.</p>
+        <h2 class="section-title">Explore India's Cultural Tapestry</h2>
+        <p class="section-description">Beyond surface-level tourism, Bharatiya Sanskriti connects you with authentic experiences from 29 states and 8 union territories, each with its unique cultural identity yet forming a harmonious whole.</p>
       </div>
       
       <div class="features">
         <div class="feature-card">
-          <img src="images/image.png" alt="AR-enabled cultural navigation" class="feature-img">
+          <img src="https://images.unsplash.com/photo-1524492412937-b33874b7bdd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="AR-enabled cultural navigation" class="feature-img">
           <div class="feature-content">
-            <h3 class="feature-title">Cultural Context Navigator</h3>
-            <p class="feature-description">Experience landmarks through AR-enabled exploration with historical context, untold stories, and perspectives from local communities that bring Karnataka's heritage to life.</p>
-            <a href="#" class="feature-link">Explore more <i class="fas fa-arrow-right"></i></a>
+            <h3 class="feature-title">Cultural Immersion Guide</h
+
+complete this code
+Here's the completed code for the Indian culture website:
+
+html
+Copy
+            <h3 class="feature-title">Cultural Immersion Guide</h3>
+            <p class="feature-description">Experience India's heritage through our interactive AR-enabled cultural navigation system that brings monuments and traditions to life.</p>
+            <a href="#" class="feature-link">Explore Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         
         <div class="feature-card">
-          <img src="images/belur.png" alt="Smart tourism distribution" class="feature-img">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Regional festivals" class="feature-img">
           <div class="feature-content">
-            <h3 class="feature-title">Smart Tourism Distribution</h3>
-            <p class="feature-description">Discover hidden gems with AI-powered recommendations that take you beyond crowded tourist spots, supporting local economies while preserving Karnataka's lesser-known cultural treasures.</p>
-            <a href="#" class="feature-link">Discover now <i class="fas fa-arrow-right"></i></a>
+            <h3 class="feature-title">Festival Calendar</h3>
+            <p class="feature-description">From Diwali to Onam, track over 500 regional festivals with local insights on traditions, foods, and celebration methods.</p>
+            <a href="#" class="feature-link">View Calendar <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         
         <div class="feature-card">
-          <img src="images/ele.png" alt="Cultural translation" class="feature-img">
+          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Indian cuisine" class="feature-img">
           <div class="feature-content">
-            <h3 class="feature-title">Cultural Translation Hub</h3>
-            <p class="feature-description">Connect meaningfully with locals through translations that go beyond literal meaning to include cultural context, regional expressions, and the nuances of Kannada and other local languages.</p>
-            <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            <h3 class="feature-title">Culinary Journeys</h3>
+            <p class="feature-description">Discover India's diverse culinary landscape with recipes, food stories, and regional cooking techniques passed through generations.</p>
+            <a href="#" class="feature-link">Start Cooking <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -904,97 +954,243 @@
   <section class="section section-alt" id="features">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Deeper Cultural Immersion</h2>
-        <p class="section-description">Sangama helps you connect with Karnataka's rich tapestry of traditions, flavors, and stories through innovative features designed for meaningful cultural exchange.</p>
-      </div>
-      
-      <div class="features">
-        <div class="feature-card">
-          <img src="images/chik.png" alt="Culinary heritage maps" class="feature-img">
-          <div class="feature-content">
-            <h3 class="feature-title">Culinary Heritage Maps</h3>
-            <p class="feature-description">Explore Karnataka's diverse cuisine through interactive food maps that connect each dish to its cultural significance, historical origins, and the stories behind regional specialties like Bisi Bele Bath, Mysore Pak, and Kane Rava Fry.</p>
-            <a href="#" class="feature-link">Taste Karnataka <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        
-        <div class="feature-card">
-          <img src="images/sil.png" alt="Heritage preservation" class="feature-img">
-          <div class="feature-content">
-            <h3 class="feature-title">Heritage Preservation Network</h3>
-            <p class="feature-description">Join a community-driven effort to document and preserve Karnataka's tangible and intangible cultural heritage - from ancient temples and architectural marvels to folk traditions, music, dance forms, and oral histories.</p>
-            <a href="#" class="feature-link">Join the movement <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section class="section" id="destinations">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Enhanced Travel Experience</h2>
-        <p class="section-description">Sangama offers additional features to make your cultural journey through Karnataka seamless and enriching.</p>
+        <h2 class="section-title">Pillars of Indian Culture</h2>
+        <p class="section-description">India's civilization spans over 5,000 years, creating a cultural mosaic that blends ancient wisdom with modern dynamism.</p>
       </div>
       
       <div class="side-features">
         <div class="side-feature">
-          <div class="side-feature-icon"><i class="fas fa-calendar-alt"></i></div>
-          <h3 class="side-feature-title">Cultural Calendar</h3>
-          <p class="side-feature-description">Discover local festivals, events, and cultural celebrations happening during your visit to Karnataka.</p>
-        </div>
-        
-        <div class="side-feature">
-          <div class="side-feature-icon"><i class="fas fa-certificate"></i></div>
-          <h3 class="side-feature-title">Souvenir Authentication</h3>
-          <p class="side-feature-description">Verify the authenticity and cultural significance of potential souvenirs before purchasing.</p>
+          <div class="side-feature-icon"><i class="fas fa-om"></i></div>
+          <h3 class="side-feature-title">Spiritual Traditions</h3>
+          <p class="side-feature-description">Yoga, meditation, and diverse philosophical schools that have influenced the world.</p>
         </div>
         
         <div class="side-feature">
           <div class="side-feature-icon"><i class="fas fa-hands-helping"></i></div>
-          <h3 class="side-feature-title">Cultural Etiquette Guide</h3>
-          <p class="side-feature-description">Quick reference guides for cultural customs specific to different regions of Karnataka.</p>
+          <h3 class="side-feature-title">Family Values</h3>
+          <p class="side-feature-description">The joint family system and respect for elders as cultural cornerstones.</p>
         </div>
         
         <div class="side-feature">
-          <div class="side-feature-icon"><i class="fas fa-language"></i></div>
-          <h3 class="side-feature-title">Kannada Phrase of the Day</h3>
-          <p class="side-feature-description">Learn useful local phrases with proper pronunciation and cultural context.</p>
-        </div>
-        
-        <div class="side-feature">
-          <div class="side-feature-icon"><i class="fas fa-wheelchair"></i></div>
-          <h3 class="side-feature-title">Accessibility Checker</h3>
-          <p class="side-feature-description">Find cultural sites with accessibility features throughout Karnataka.</p>
+          <div class="side-feature-icon"><i class="fas fa-tshirt"></i></div>
+          <h3 class="side-feature-title">Textile Heritage</h3>
+          <p class="side-feature-description">From Banarasi silk to Pashmina shawls, India's weaving traditions.</p>
         </div>
         
         <div class="side-feature">
           <div class="side-feature-icon"><i class="fas fa-music"></i></div>
-          <h3 class="side-feature-title">Cultural Playlist Generator</h3>
-          <p class="side-feature-description">Discover traditional and contemporary music from Karnataka's diverse musical traditions.</p>
+          <h3 class="side-feature-title">Classical Arts</h3>
+          <p class="side-feature-description">Eight major classical dance forms and two music traditions with regional variations.</p>
         </div>
         
         <div class="side-feature">
-          <div class="side-feature-icon"><i class="fas fa-camera"></i></div>
-          <h3 class="side-feature-title">Photo Spot Recommender</h3>
-          <p class="side-feature-description">Find unique, less crowded photo opportunities with cultural significance.</p>
+          <div class="side-feature-icon"><i class="fas fa-book"></i></div>
+          <h3 class="side-feature-title">Literary Wealth</h3>
+          <p class="side-feature-description">Epics like Mahabharata and Ramayana, and 22 officially recognized languages.</p>
         </div>
         
         <div class="side-feature">
-          <div class="side-feature-icon"><i class="fas fa-envelope"></i></div>
-          <h3 class="side-feature-title">Digital Postcard Creator</h3>
-          <p class="side-feature-description">Turn your photos into digital postcards with Karnataka's cultural designs and motifs.</p>
+          <div class="side-feature-icon"><i class="fas fa-archway"></i></div>
+          <h3 class="side-feature-title">Architectural Marvels</h3>
+          <p class="side-feature-description">From ancient temples to Mughal monuments and colonial buildings.</p>
         </div>
       </div>
     </div>
   </section>
   
-  <footer>
+  <section class="section" id="regions">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Regional Diversity</h2>
+        <p class="section-description">India's cultural landscape changes every few hundred kilometers, with each region offering unique traditions.</p>
+      </div>
+      
+      <div class="features">
+        <div class="feature-card">
+          <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="North India" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">North India</h3>
+            <p class="feature-description">The land of Mughal heritage, Sikh traditions, Himalayan spirituality, and vibrant Punjabi culture.</p>
+            <a href="#" class="feature-link">Explore North <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <img src="https://images.unsplash.com/photo-1565498255681-4b7a1dab3735?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="South India" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">South India</h3>
+            <p class="feature-description">Dravidian culture with magnificent temples, classical arts, and unique festivals like Pongal.</p>
+            <a href="#" class="feature-link">Explore South <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <img src="https://images.unsplash.com/photo-1581852017103-68e8115e1e51?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="East India" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">East India</h3>
+            <p class="feature-description">Tribal cultures, Durga Puja celebrations, Buddhist circuits, and tea gardens.</p>
+            <a href="#" class="feature-link">Explore East <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <img src="https://images.unsplash.com/photo-1512343871924-236d040f6b0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="West India" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">West India</h3>
+            <p class="feature-description">From Gujarati folk dances to Goan beaches and Maharashtrian festivals like Ganesh Chaturthi.</p>
+            <a href="#" class="feature-link">Explore West <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Ready to Experience India Like Never Before?</h2>
+      <p class="cta-description">Join our cultural immersion program and get personalized recommendations based on your interests and travel timeline.</p>
+      <button class="cta-button">Begin Your Journey <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+  
+  <section class="section" id="cuisine">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Culinary Diversity</h2>
+        <p class="section-description">India's cuisine varies dramatically by region, religion, and even caste, offering an incredible gastronomic journey.</p>
+      </div>
+      
+      <div class="side-features">
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-utensils"></i></div>
+          <h3 class="side-feature-title">North Indian</h3>
+          <p class="side-feature-description">Tandoori, Mughlai, and Punjabi cuisine with wheat-based breads and rich gravies.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-drumstick-bite"></i></div>
+          <h3 class="side-feature-title">South Indian</h3>
+          <p class="side-feature-description">Rice-based meals with dosas, idlis, sambars and coconut-infused flavors.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-fish"></i></div>
+          <h3 class="side-feature-title">East Indian</h3>
+          <p class="side-feature-description">Bengali sweets, Odia temple food, and Assamese tribal cuisine with bamboo shoots.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-pepper-hot"></i></div>
+          <h3 class="side-feature-title">West Indian</h3>
+          <p class="side-feature-description">Gujarati thalis, Maharashtrian vada pav, Goan seafood and Portuguese influences.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-leaf"></i></div>
+          <h3 class="side-feature-title">Vegetarian Traditions</h3>
+          <p class="side-feature-description">Jain, Brahmin and other vegetarian culinary schools with ancient roots.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-mortar-pestle"></i></div>
+          <h3 class="side-feature-title">Spice Blends</h3>
+          <p class="side-feature-description">Regional masala mixes and Ayurvedic principles in cooking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt" id="arts">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Performing & Visual Arts</h2>
+        <p class="section-description">India's artistic traditions are among the world's oldest, with UNESCO recognizing many as Intangible Cultural Heritage.</p>
+      </div>
+      
+      <div class="features">
+        <div class="feature-card">
+          <img src="images/dance.png" alt="Classical Dance" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">Classical Dance Forms</h3>
+            <p class="feature-description">Bharatanatyam, Kathak, Kathakali, Odissi, Manipuri, Kuchipudi, Mohiniyattam, and Sattriya.</p>
+            <a href="#" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a5d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Folk Arts" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">Folk & Tribal Arts</h3>
+            <p class="feature-description">Warli, Madhubani, Pattachitra, Kalamezhuthu, and hundreds of other regional forms.</p>
+            <a href="#" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Music" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">Musical Traditions</h3>
+            <p class="feature-description">Hindustani and Carnatic systems with instruments like sitar, tabla, veena, and mridangam.</p>
+            <a href="#" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section" id="festivals">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Festivals of India</h2>
+        <p class="section-description">With major religions coexisting, India celebrates festivals year-round, each with unique rituals, foods, and cultural significance.</p>
+      </div>
+      
+      <div class="side-features">
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-oil-can"></i></div>
+          <h3 class="side-feature-title">Diwali</h3>
+          <p class="side-feature-description">Festival of lights celebrated across India with regional variations in rituals and foods.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-water"></i></div>
+          <h3 class="side-feature-title">Holi</h3>
+          <p class="side-feature-description">Vibrant festival of colors marking spring's arrival with traditional thandai drinks.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-mosque"></i></div>
+          <h3 class="side-feature-title">Eid</h3>
+          <p class="side-feature-description">Celebrated with sevaiyan sweets and communal prayers in Muslim communities.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-tree"></i></div>
+          <h3 class="side-feature-title">Christmas</h3>
+          <p class="side-feature-description">Goan and Kerala Christian traditions blend local flavors with Western customs.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-sun"></i></div>
+          <h3 class="side-feature-title">Pongal/Makar Sankranti</h3>
+          <p class="side-feature-description">Harvest festivals celebrated with kite flying and special rice dishes.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-om"></i></div>
+          <h3 class="side-feature-title">Navratri/Durga Puja</h3>
+          <p class="side-feature-description">Nine nights of dance in Gujarat and elaborate pandals in West Bengal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer id="contact">
     <div class="container">
       <div class="footer-container">
         <div class="footer-about">
-          <div class="footer-logo">ಸಂಗಮ</div>
-          <p class="footer-description">Transforming cultural tourism in Karnataka through immersive experiences, authentic connections, and sustainable practices.</p>
+          <div class="footer-logo">भारतीय संस्कृति</div>
+          <p class="footer-description">Dedicated to preserving and promoting India's diverse cultural heritage through education and immersive experiences.</p>
           <div class="social-links">
             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
@@ -1004,128 +1200,98 @@
         </div>
         
         <div class="footer-links">
-          <h3>Explore</h3>
+          <h3>Quick Links</h3>
           <ul>
-            <li><a href="#">Destinations</a></li>
-            <li><a href="#">Cultural Events</a></li>
-            <li><a href="#">Cuisines</a></li>
-            <li><a href="#">Heritage Sites</a></li>
-            <li><a href="#">Art Forms</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-links">
-          <h3>Company</h3>
-          <ul>
+            <li><a href="#">Home</a></li>
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Mission</a></li>
-            <li><a href="#">Partners</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Cultural Tours</a></li>
+            <li><a href="#">Workshops</a></li>
+            <li><a href="#">Blog</a></li>
           </ul>
         </div>
         
         <div class="footer-links">
-          <h3>Support</h3>
+          <h3>Resources</h3>
           <ul>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Cultural Calendar</a></li>
+            <li><a href="#">Language Guides</a></li>
+            <li><a href="#">Etiquette Tips</a></li>
+            <li><a href="#">Regional Maps</a></li>
+            <li><a href="#">Research Papers</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><a href="mailto:info@bharatiyasanskriti.com">info@bharatiyasanskriti.com</a></li>
+            <li><a href="tel:+911234567890">+91 12345 67890</a></li>
+            <li>123 Culture Street<br>New Delhi 110001<br>India</li>
           </ul>
         </div>
       </div>
       
       <div class="copyright">
-        <p>© 2025 ಸಂಗಮ (Sangama). All rights reserved. Preserving Karnataka's cultural heritage through technology.</p>
+        <p>&copy; 2023 Bharatiya Sanskriti. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
       </div>
     </div>
   </footer>
   
   <script>
-    // Theme Toggle Functionality
-function toggleTheme() {
-  const body = document.body;
-  const lightIcon = document.querySelector('.light-icon');
-  const darkIcon = document.querySelector('.dark-icon');
-  
-  body.classList.toggle('dark-mode');
-  
-  // Update the icon based on current theme
-  if (body.classList.contains('dark-mode')) {
-    lightIcon.style.display = 'none';
-    darkIcon.style.display = 'inline';
-    // Store preference in local storage
-    localStorage.setItem('theme', 'dark');
-  } else {
-    lightIcon.style.display = 'inline';
-    darkIcon.style.display = 'none';
-    // Store preference in local storage
-    localStorage.setItem('theme', 'light');
-  }
-}
-
-// Mobile Menu Toggle Functionality
-function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('active');
-}
-
-// Check for saved theme preference when page loads
-document.addEventListener('DOMContentLoaded', function() {
-  const savedTheme = localStorage.getItem('theme');
-  
-  if (savedTheme === 'dark') {
-    // Apply dark mode
-    document.body.classList.add('dark-mode');
-    document.querySelector('.light-icon').style.display = 'none';
-    document.querySelector('.dark-icon').style.display = 'inline';
-  }
-  
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
+    // Toggle dark/light theme
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
       
-      // Close mobile menu if open
-      document.querySelector('.nav-links').classList.remove('active');
-      
-      // Scroll to section
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
+      // Save preference to localStorage
+      const isDarkMode = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDarkMode);
+    }
+    
+    // Check for saved theme preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+      document.getElementById('themeToggle').checked = true;
+    }
+    
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
       });
     });
-  });
-  
-  // Add animation to elements when they enter viewport
-  const animatedElements = document.querySelectorAll('.feature-card, .side-feature');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Add shadow to navbar on scroll
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 10) {
+        nav.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+      } else {
+        nav.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
       }
     });
-  }, { threshold: 0.1 });
-  
-  animatedElements.forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
-  
-  // Header CTA button animation and functionality
-  const headerCta = document.querySelector('.header-cta');
-  headerCta.addEventListener('click', function() {
-    // Scroll to CTA section
-    document.querySelector('.cta-section').scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
   </script>
-  </body>
-  </html>
+</body>
+</html>
