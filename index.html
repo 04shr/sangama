@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ಸಂಗಮ (Sangama) - Where Cultures Converge</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --text-primary-light: #2c3e50;
+      --text-secondary-light: #7f8c8d;
+      --bg-primary-light: #f9f7f0;
+      --bg-secondary-light: #f0e6cc;
+      --accent-light: #e74c3c;
+      --accent-secondary-light: #c0392b;
+      --border-light: #d5dbdb;
+      
+      --text-primary-dark: #ecf0f1;
+      --text-secondary-dark: #bdc3c7;
+      --bg-primary-dark: #1a1a2e;
+      --bg-secondary-dark: #16213e;
+      --accent-dark: #f39c12;
+      --accent-secondary-dark: #e67e22;
+      --border-dark: #34495e;
+
+      --color1: #e74c3c;
+      --color2: #f39c12;
+      --color3: #2ecc71;
+      --color4: #3498db;
+      --color5: #9b59b6;
+    }
+    
+    body {
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-primary-light);
+      color: var(--text-primary-light);
+      transition: all 0.3s ease;
+      line-height: 1.6;
+    }
+    
+    body.dark-mode {
+      background-color: var(--bg-primary-dark);
+      color: var(--text-primary-dark);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Vibrant Header */
+    header {
+      background-image: 
+        linear-gradient(135deg, rgba(231, 76, 60, 0.8), rgba(243, 156, 18, 0.8)),
+        url('/api/placeholder/1200/400');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+    
+    .logo {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+      animation: fadeInDown 1s ease;
+    }
+    
+    .tagline {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease;
+    }
+    
+    .header-cta {
+      background-color: var(--accent-light);
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+      animation: pulse 2s infinite;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .dark-mode .header-cta {
+      background-color: var(--accent-dark);
+      box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+    }
+    
+    .header-cta:hover {
+      background-color: var(--accent-secondary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
+      animation: none;
+    }
+    
+    .dark-mode .header-cta:hover {
+      background-color: var(--accent-secondary-dark);
+      box-shadow: 0 8px 20px rgba(243, 156, 18, 0.6);
+    }
+    
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+    
+    .theme-toggle:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.05);
+    }
+    
+    /* Animated Navigation */
+    nav {
+      background-color: var(--bg-primary-light);
+      padding: 15px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+    
+    .dark-mode nav {
+      background-color: var(--bg-primary-dark);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--accent-light);
+      transition: all 0.3s ease;
+    }
+    
+    .dark-mode .nav-logo {
+      color: var(--accent-dark);
+    }
+    
+    .nav-logo:hover {
+      transform: rotate(-5deg);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-primary-light);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 5px 0;
+    }
+    
+    .dark-mode .nav-links a {
+      color: var(--text-primary-dark);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background-color: var(--accent-light);
+      transition: width 0.3s ease;
+      border-radius: 3px;
+    }
+    
+    .dark-mode .nav-links a::after {
+      background-color: var(--accent-dark);
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent-light);
+    }
+    
+    .dark-mode .nav-links a:hover {
+      color: var(--accent-dark);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hamburger Menu for Mobile */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--accent-light);
+      font-size: 1.8rem;
+    }
+    
+    .dark-mode .hamburger {
+      color: var(--accent-dark);
+    }
+    
+    /* Sections with Colorful Accents */
+    .section {
+      padding: 80px 0;
+      position: relative;
+    }
+    
+    .section-alt {
+      background-color: var(--bg-secondary-light);
+      clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+      padding: 100px 0;
+      margin: 50px 0;
+    }
+    
+    .dark-mode .section-alt {
+      background-color: var(--bg-secondary-dark);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    .section-title {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: var(--text-primary-light);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--color1), var(--color2));
+      border-radius: 5px;
+    }
+    
+    .dark-mode .section-title {
+      color: var(--text-primary-dark);
+    }
+    
+    .section-description {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--text-secondary-light);
+    }
+    
+    .dark-mode .section-description {
+      color: var(--text-secondary-dark);
+    }
+    
+    /* Feature Cards with Hover Effects */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .feature-card {
+      background-color: var(--bg-primary-light);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      position: relative;
+      border-top: 5px solid var(--color1);
+    }
+    
+    .feature-card:nth-child(2) {
+      border-top-color: var(--color2);
+    }
+    
+    .feature-card:nth-child(3) {
+      border-top-color: var(--color3);
+    }
+    
+    .feature-card:nth-child(4) {
+      border-top-color: var(--color4);
+    }
+    
+    .feature-card:nth-child(5) {
+      border-top-color: var(--color5);
+    }
+    
+    .dark-mode .feature-card {
+      background-color: var(--bg-primary-dark);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    
+    .dark-mode .feature-card:hover {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    
+    .feature-img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+    
+    .feature-card:hover .feature-img {
+      transform: scale(1.1);
+    }
+    
+    .feature-content {
+      padding: 25px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .feature-title {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: var(--text-primary-light);
+    }
+    
+    .dark-mode .feature-title {
+      color: var(--text-primary-dark);
+    }
+    
+    .feature-description {
+      color: var(--text-secondary-light);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    
+    .dark-mode .feature-description {
+      color: var(--text-secondary-dark);
+    }
+    
+    .feature-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--accent-light);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .dark-mode .feature-link {
+      color: var(--accent-dark);
+    }
+    
+    .feature-link i {
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-link:hover {
+      color: var(--accent-secondary-light);
+    }
+    
+    .dark-mode .feature-link:hover {
+      color: var(--accent-secondary-dark);
+    }
+    
+    .feature-link:hover i {
+      transform: translateX(5px);
+    }
+    
+    /* Vibrant CTA Section */
+    .cta-section {
+      text-align: center;
+      background-image: 
+        linear-gradient(135deg, rgba(46, 204, 113, 0.8), rgba(52, 152, 219, 0.8)),
+        url('/api/placeholder/1200/400');
+      background-size: cover;
+      background-position: center;
+      padding: 120px 20px;
+      color: white;
+      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+      margin: 80px 0;
+    }
+    
+    .cta-title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+    }
+    
+    .cta-description {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+    }
+    
+    .cta-button {
+      background-color: white;
+      color: var(--color3);
+      padding: 18px 50px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .cta-button i {
+      transition: transform 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      background-color: var(--color3);
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+    
+    .cta-button:hover i {
+      transform: rotate(360deg);
+    }
+    
+    /* Side Features Grid */
+    .side-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .side-feature {
+      background-color: var(--bg-primary-light);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      text-align: center;
+      border-bottom: 4px solid var(--color1);
+    }
+    
+    .side-feature:nth-child(2) {
+      border-bottom-color: var(--color2);
+    }
+    
+    .side-feature:nth-child(3) {
+      border-bottom-color: var(--color3);
+    }
+    
+    .side-feature:nth-child(4) {
+      border-bottom-color: var(--color4);
+    }
+    
+    .side-feature:nth-child(5) {
+      border-bottom-color: var(--color5);
+    }
+    
+    .side-feature:nth-child(6) {
+      border-bottom-color: var(--color1);
+    }
+    
+    .side-feature:nth-child(7) {
+      border-bottom-color: var(--color2);
+    }
+    
+    .side-feature:nth-child(8) {
+      border-bottom-color: var(--color3);
+    }
+    
+    .dark-mode .side-feature {
+      background-color: var(--bg-primary-dark);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    .side-feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    
+    .dark-mode .side-feature:hover {
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+    
+    .side-feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--accent-light);
+    }
+    
+    .dark-mode .side-feature-icon {
+      color: var(--accent-dark);
+    }
+    
+    .side-feature-title {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--text-primary-light);
+    }
+    
+    .dark-mode .side-feature-title {
+      color: var(--text-primary-dark);
+    }
+    
+    .side-feature-description {
+      color: var(--text-secondary-light);
+      font-size: 1rem;
+    }
+    
+    .dark-mode .side-feature-description {
+      color: var(--text-secondary-dark);
+    }
+    
+    /* Colorful Footer */
+    footer {
+      background-color: var(--bg-secondary-light);
+      padding: 80px 0 30px;
+      color: var(--text-secondary-light);
+      clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+      margin-top: 80px;
+    }
+    
+    .dark-mode footer {
+      background-color: var(--bg-secondary-dark);
+      color: var(--text-secondary-dark);
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+    
+    .footer-logo {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: var(--accent-light);
+    }
+    
+    .dark-mode .footer-logo {
+      color: var(--accent-dark);
+    }
+    
+    .footer-description {
+      color: var(--text-secondary-light);
+      margin-bottom: 25px;
+      font-size: 1rem;
+    }
+    
+    .dark-mode .footer-description {
+      color: var(--text-secondary-dark);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--bg-primary-light);
+      color: var(--accent-light);
+      transition: all 0.3s ease;
+    }
+    
+    .dark-mode .social-link {
+      background-color: var(--bg-primary-dark);
+      color: var(--accent-dark);
+    }
+    
+    .social-link:hover {
+      background-color: var(--accent-light);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    .dark-mode .social-link:hover {
+      background-color: var(--accent-dark);
+    }
+    
+    .footer-links h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: var(--text-primary-light);
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-links h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent-light);
+      border-radius: 3px;
+    }
+    
+    .dark-mode .footer-links h3 {
+      color: var(--text-primary-dark);
+    }
+    
+    .dark-mode .footer-links h3::after {
+      background-color: var(--accent-dark);
+    }
+    
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      text-decoration: none;
+      color: var(--text-secondary-light);
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .dark-mode .footer-links a {
+      color: var(--text-secondary-dark);
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent-light);
+      transform: translateX(5px);
+    }
+    
+    .dark-mode .footer-links a:hover {
+      color: var(--accent-dark);
+    }
+    
+    .copyright {
+      margin-top: 50px;
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-light);
+      color: var(--text-secondary-light);
+      font-size: 0.9rem;
+    }
+    
+    .dark-mode .copyright {
+      border-top: 1px solid var(--border-dark);
+      color: var(--text-secondary-dark);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 992px) {
+      .logo {
+        font-size: 3rem;
+      }
+      
+      .tagline {
+        font-size: 1.5rem;
+      }
+      
+      .section-title {
+        font-size: 2.2rem;
+      }
+      
+      .cta-title {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-primary-light);
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 99;
+      }
+      
+      .dark-mode .nav-links {
+        background-color: var(--bg-primary-dark);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .nav-links a {
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--border-light);
+      }
+      
+      .dark-mode .nav-links a {
+        border-bottom: 1px solid var(--border-dark);
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .section-alt {
+        clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
+      }
+      
+      .cta-section {
+        clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+      }
+      
+      footer {
+        clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+    
+    @media (max-width: 576px) {
+      header {
+        padding: 80px 0;
+      }
+      
+      .logo {
+        font-size: 2.5rem;
+      }
+      
+      .tagline {
+        font-size: 1.2rem;
+      }
+      
+      .header-cta {
+        padding: 12px 30px;
+        font-size: 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .section-description, .cta-description {
+        font-size: 1rem;
+      }
+      
+      .cta-title {
+        font-size: 2rem;
+      }
+      
+      .cta-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+      }
+      
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <span class="light-icon">🌙</span>
+      <span class="dark-icon" style="display:none">☀️</span>
+    </button>
+    <div class="container">
+      <div class="logo">ಸಂಗಮ</div>
+      <div class="tagline">Where Cultures Converge, Traditions Flourish</div>
+      <button class="header-cta">Experience Karnataka's Heritage</button>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="container nav-container">
+      <div class="nav-logo">ಸಂಗಮ</div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#cuisine">Cuisine</a>
+        <a href="#culture">Culture</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+  
+  <section class="section" id="home">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Rediscover Karnataka's Cultural Heritage</h2>
+        <p class="section-description">Beyond surface-level tourism, Sangama connects you with authentic cultural experiences, rich historical context, and sustainable practices that benefit both travelers and local communities.</p>
+      </div>
+      
+      <div class="features">
+        <div class="feature-card">
+          <img src="images/image.png" alt="AR-enabled cultural navigation" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">Cultural Context Navigator</h3>
+            <p class="feature-description">Experience landmarks through AR-enabled exploration with historical context, untold stories, and perspectives from local communities that bring Karnataka's heritage to life.</p>
+            <a href="#" class="feature-link">Explore more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <img src="images/belur.png" alt="Smart tourism distribution" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">Smart Tourism Distribution</h3>
+            <p class="feature-description">Discover hidden gems with AI-powered recommendations that take you beyond crowded tourist spots, supporting local economies while preserving Karnataka's lesser-known cultural treasures.</p>
+            <a href="#" class="feature-link">Discover now <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <img src="images/ele.png" alt="Cultural translation" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">Cultural Translation Hub</h3>
+            <p class="feature-description">Connect meaningfully with locals through translations that go beyond literal meaning to include cultural context, regional expressions, and the nuances of Kannada and other local languages.</p>
+            <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Deeper Cultural Immersion</h2>
+        <p class="section-description">Sangama helps you connect with Karnataka's rich tapestry of traditions, flavors, and stories through innovative features designed for meaningful cultural exchange.</p>
+      </div>
+      
+      <div class="features">
+        <div class="feature-card">
+          <img src="images/chik.png" alt="Culinary heritage maps" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">Culinary Heritage Maps</h3>
+            <p class="feature-description">Explore Karnataka's diverse cuisine through interactive food maps that connect each dish to its cultural significance, historical origins, and the stories behind regional specialties like Bisi Bele Bath, Mysore Pak, and Kane Rava Fry.</p>
+            <a href="#" class="feature-link">Taste Karnataka <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <img src="images/sil.png" alt="Heritage preservation" class="feature-img">
+          <div class="feature-content">
+            <h3 class="feature-title">Heritage Preservation Network</h3>
+            <p class="feature-description">Join a community-driven effort to document and preserve Karnataka's tangible and intangible cultural heritage - from ancient temples and architectural marvels to folk traditions, music, dance forms, and oral histories.</p>
+            <a href="#" class="feature-link">Join the movement <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section" id="destinations">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Enhanced Travel Experience</h2>
+        <p class="section-description">Sangama offers additional features to make your cultural journey through Karnataka seamless and enriching.</p>
+      </div>
+      
+      <div class="side-features">
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-calendar-alt"></i></div>
+          <h3 class="side-feature-title">Cultural Calendar</h3>
+          <p class="side-feature-description">Discover local festivals, events, and cultural celebrations happening during your visit to Karnataka.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-certificate"></i></div>
+          <h3 class="side-feature-title">Souvenir Authentication</h3>
+          <p class="side-feature-description">Verify the authenticity and cultural significance of potential souvenirs before purchasing.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-hands-helping"></i></div>
+          <h3 class="side-feature-title">Cultural Etiquette Guide</h3>
+          <p class="side-feature-description">Quick reference guides for cultural customs specific to different regions of Karnataka.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-language"></i></div>
+          <h3 class="side-feature-title">Kannada Phrase of the Day</h3>
+          <p class="side-feature-description">Learn useful local phrases with proper pronunciation and cultural context.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-wheelchair"></i></div>
+          <h3 class="side-feature-title">Accessibility Checker</h3>
+          <p class="side-feature-description">Find cultural sites with accessibility features throughout Karnataka.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-music"></i></div>
+          <h3 class="side-feature-title">Cultural Playlist Generator</h3>
+          <p class="side-feature-description">Discover traditional and contemporary music from Karnataka's diverse musical traditions.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-camera"></i></div>
+          <h3 class="side-feature-title">Photo Spot Recommender</h3>
+          <p class="side-feature-description">Find unique, less crowded photo opportunities with cultural significance.</p>
+        </div>
+        
+        <div class="side-feature">
+          <div class="side-feature-icon"><i class="fas fa-envelope"></i></div>
+          <h3 class="side-feature-title">Digital Postcard Creator</h3>
+          <p class="side-feature-description">Turn your photos into digital postcards with Karnataka's cultural designs and motifs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">ಸಂಗಮ</div>
+          <p class="footer-description">Transforming cultural tourism in Karnataka through immersive experiences, authentic connections, and sustainable practices.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Cultural Events</a></li>
+            <li><a href="#">Cuisines</a></li>
+            <li><a href="#">Heritage Sites</a></li>
+            <li><a href="#">Art Forms</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Mission</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Sustainability</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 ಸಂಗಮ (Sangama). All rights reserved. Preserving Karnataka's cultural heritage through technology.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Theme Toggle Functionality
+function toggleTheme() {
+  const body = document.body;
+  const lightIcon = document.querySelector('.light-icon');
+  const darkIcon = document.querySelector('.dark-icon');
+  
+  body.classList.toggle('dark-mode');
+  
+  // Update the icon based on current theme
+  if (body.classList.contains('dark-mode')) {
+    lightIcon.style.display = 'none';
+    darkIcon.style.display = 'inline';
+    // Store preference in local storage
+    localStorage.setItem('theme', 'dark');
+  } else {
+    lightIcon.style.display = 'inline';
+    darkIcon.style.display = 'none';
+    // Store preference in local storage
+    localStorage.setItem('theme', 'light');
+  }
+}
+
+// Mobile Menu Toggle Functionality
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}
+
+// Check for saved theme preference when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  const savedTheme = localStorage.getItem('theme');
+  
+  if (savedTheme === 'dark') {
+    // Apply dark mode
+    document.body.classList.add('dark-mode');
+    document.querySelector('.light-icon').style.display = 'none';
+    document.querySelector('.dark-icon').style.display = 'inline';
+  }
+  
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Close mobile menu if open
+      document.querySelector('.nav-links').classList.remove('active');
+      
+      // Scroll to section
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+  
+  // Add animation to elements when they enter viewport
+  const animatedElements = document.querySelectorAll('.feature-card, .side-feature');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  animatedElements.forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+  
+  // Header CTA button animation and functionality
+  const headerCta = document.querySelector('.header-cta');
+  headerCta.addEventListener('click', function() {
+    // Scroll to CTA section
+    document.querySelector('.cta-section').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+  </script>
+  </body>
+  </html>
